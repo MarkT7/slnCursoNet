@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace WindowsApp.Entidades
 {
-    public class Factura
+    public class Factura:DocumentoComercial
     {
         public string Tipo { get; set; }
-        public string Numero { get; set; }
-        public DateTime Fecha { get; set; }
-        public string Cliente { get; set; }
-        public string Direccion { get; set; }
-        public string CondicionIVA { get; set; }
-        public string CondicionVenta { get; set; }
-        public string Detalle { get; set; }
-        public string Total { get; set; }
+
+        public Factura(string tipo, string numero, DateTime fecha, string cliente, string direccion, string condicioniva, string condicionventa, string detalle, decimal total)
+            :base(numero, fecha, cliente, direccion, condicioniva, condicionventa, detalle, total)
+        {
+            Tipo = tipo;
+        }
     }
 }

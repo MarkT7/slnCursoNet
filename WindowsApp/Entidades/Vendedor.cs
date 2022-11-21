@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WindowsApp.Entidades
 {
-    public class Vendedor
+    public class Vendedor:Persona
     {
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
         public string DNI { get; set; }
-        public string Email { get; set; }
-        public string Telefono { get; set; }
-        public string Direccion { get; set; }
+        public Vendedor(string dni, string nombre, string apellido, string email, string telefono, string direccion)
+            :base(nombre, apellido, email,telefono,direccion)
+        {
+            DNI = dni;
+        }
     }
 }
